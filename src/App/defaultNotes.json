@@ -1,0 +1,14 @@
+{
+  "note_id_0": {
+    "title": "My first note",
+    "markdownSource": "# H1 Title is supported\nRendered by **marked**."
+  },
+  "note_id_1": {
+    "title": "My second note",
+    "markdownSource": "# Links are supported\n[`Node.js`](https://nodejs.org/)"
+  },
+  "note_id_2": {
+    "title": "My third note",
+    "markdownSource": "# Marked 3 in the browser\nRendered by **marked**."
+  }
+}
