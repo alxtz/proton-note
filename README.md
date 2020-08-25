@@ -1,3 +1,11 @@
+# Tooling
+
+1. CRA + TS template for basic dev-server setup
+2. emotion for styling
+3. marked for transpiling raw markdown source to html elements
+4. uuid for generating an arbitrary id for new note items
+5. deployed onto GitHub pages https://alxtz.github.io/proton-note/
+
 # Test cases
 
 - [x] **View mode**
@@ -55,10 +63,3 @@ const decrypt = async (data) => {
     return data;
 }
 ```
-
-# Tooling
-
-1. CRA + TS template for basic dev-server setup
-2. emotion for styling
-3. marked for transpiling raw markdown source to html elements
-4. uuid for generating an arbitrary id for new note items
