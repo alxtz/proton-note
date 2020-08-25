@@ -6,6 +6,12 @@
 4. uuid for generating an arbitrary id for new note items
 5. deployed onto GitHub pages https://alxtz.github.io/proton-note/
 
+# Screenshots
+
+![](https://i.imgur.com/ZBaKm8j.png)
+![](https://i.imgur.com/49XPVPw.png)
+![](https://i.imgur.com/4o7eR5z.png)
+
 # Test cases
 
 - [x] **View mode**
