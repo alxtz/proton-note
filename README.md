@@ -1,44 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Test cases
 
-## Available Scripts
+- [x] **View mode**
+      ![](https://i.imgur.com/PYwFJ5Z.png)
 
-In the project directory, you can run:
+The user can:
 
-### `yarn start`
+- [x] view a list of notes (left pane).
+- [x] view the title and markdown rendered text of a note (right pane - **view mode**).
+- [x] write a title and plaintext markdown text and save it as a note (right pane - **edit mode**).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The user can:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [x] open an existing note and view the markdown rendered note (the composer is not visible).
+- [x] click on the `Edit` button to be taken to the edit mode.
+- [x] click on the `New note` button to be taken to the edit mode and create a new note in the list of notes.
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] **Edit mode**
+      Edit mode is activated either by creating a new note or editing an existing one.
+      ![](https://i.imgur.com/ZLfuPzL.png)
 
-### `yarn build`
+The user can:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] not click on the `New note` button.
+- [x] not click on another note.
+- [x] click on the `Cancel` button to be taken to the view mode.
+- [x] click on the `Delete` button to delete the note.
+- [x] click on the `Save` button to save the note and be taken to the view mode.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Data
 
-### `yarn eject`
+- [x] The title of each note is not encrypted (stored in clear text).
+- [x] The content of each note is encrypted when saving it. Take into consideration the loading state.
+- [x] The content of each note is decrypted when opening it. Take into consideration the loading state.
+- [x] Since real encryption/decryption are out of scope, mock the encrypt and decrypt operations with the following functions that do not alter any data.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+const wait = async (delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, 500);
+    });
+};
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+const encrypt = async (data) => {
+    await wait(500);
+    return data;
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+const decrypt = async (data) => {
+    await wait(500);
+    return data;
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Tooling
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. CRA + TS template for basic dev-server setup
+2. emotion for styling
+3. marked for transpiling raw markdown source to html elements
+4. uuid for generating an arbitrary id for new note items
